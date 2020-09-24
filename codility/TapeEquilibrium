@@ -1,0 +1,19 @@
+function solution(A) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    let size = A.length;
+    let difference = 2000; 
+    
+    let zero = 0;
+    let sum = A.reduce((acc,current)=>acc=acc+current);
+    
+    for(let i=0;i<size-1;i++) {
+        zero = zero + A[i];
+        sum = sum - A[i];
+        
+        let math = Math.abs(sum-zero);
+        if(math < difference) {
+            difference = math;
+        }
+    }
+    return difference;
+}
