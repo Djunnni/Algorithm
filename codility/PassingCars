@@ -1,0 +1,21 @@
+function solution(A) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    let count = 0;
+    let zero = A.map((x,index) => {
+        if(x==0)
+        return index;
+        
+    }).filter(x=> x!=undefined);
+    
+    let zLen = zero.length;
+    zero.forEach((x,index)=> {
+        zLen = zLen -1 ;
+        let size = A.length - (x + 1) - (zLen);
+        count = count + size;
+    })
+    
+    if(count > 1000000000){
+        count = -1;
+    }
+    return count;
+}
