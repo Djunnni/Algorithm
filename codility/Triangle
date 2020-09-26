@@ -1,0 +1,27 @@
+function solution(A) {
+    // 만들수 있니 없니
+    let can = 0;
+        
+    // 1. 정렬이 잘 됐는지 확인
+    A.sort((x,y)=>{
+        if(x<0 && y<0) {
+            return y-x;
+        }
+        return x-y;
+    });
+    // 2. 최대값 잡기
+    while(A.length>0) {
+        let i = A.length - 1;
+        let MAX = A[i];
+        let SUM = A[i-1]+A[i-2];
+        if(MAX < SUM) {
+            can = 1;
+            break;
+        } else {
+            A.pop();
+        }
+    }
+    
+    
+    return can;
+}
