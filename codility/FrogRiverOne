@@ -1,0 +1,12 @@
+function solution(X, A) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    let step = new Set();
+    for(let i=0;i<A.length;i++) {
+        step.add(A[i]);
+        
+        if(step.size == X) {
+            return i;
+        }
+    }
+    return -1;
+}
