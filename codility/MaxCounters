@@ -1,0 +1,37 @@
+// you can write to stdout for debugging purposes, e.g.
+// console.log('this is a debug message');
+
+function solution(N, A) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    let arr = [];
+    let max = 0;
+    let tmp = 0;
+    for(let i=0; i<N; i++){
+        arr[i] = 0;
+    } 
+    // run
+    A.forEach((item,index) => {
+        if(item < N + 1) {
+            if(arr[item -1] < max) {
+                arr[item -1] = max;
+            }
+            
+            arr[item -1] = arr[item -1] + 1;
+            if(arr[item -1] > max + tmp) {
+                tmp = arr[item -1] - max;
+            }
+        } else {
+            max = max + tmp;
+            tmp = 0;
+        }
+    });
+    
+    arr = arr.map((x)=> {
+        if(x < max){
+            return max;
+        }
+        return x;
+        
+    });
+    return arr;
+}
