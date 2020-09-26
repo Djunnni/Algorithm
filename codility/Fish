@@ -1,0 +1,23 @@
+function solution(A, B) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    const stack = [];
+    let liveCount = 0;
+    
+    for(let i=0;i<A.length;i++) {
+        if(B[i]) {
+             stack.push(A[i]);
+        }
+        else {
+            while(stack.length > 0) {
+                let downFishSize = stack[stack.length-1];
+                if(downFishSize > A[i]) break;
+                else stack.pop();
+            }
+            if(stack.length == 0) {
+                liveCount = liveCount + 1;
+            }
+        }
+    }
+    
+    return liveCount + stack.length;
+}
