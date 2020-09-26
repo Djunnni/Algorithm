@@ -1,0 +1,27 @@
+function solution(S) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    // 적절하다고 하자
+    let properly = 1;
+    // 스택을 구현한다.
+    let stack = [];
+    let splitArr = S.split('');
+   
+    splitArr.forEach((item,index)=> {
+       stack.push(item);
+       let before = stack[stack.length-2];
+       if(before == '{' && item == '}') {
+           stack.pop();
+           stack.pop();
+       }
+       if(before == '(' && item == ')') {
+           stack.pop();
+           stack.pop();
+       }
+        if(before == '[' && item == ']') {
+           stack.pop();
+           stack.pop();
+       }
+    });
+    if(stack.length != 0) { properly = 0; }
+    return properly;
+}
