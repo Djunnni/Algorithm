@@ -1,0 +1,15 @@
+function solution(A) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    let answer = 0;
+    A.sort((x,y)=> {
+        return x - y;
+    });
+    let i = A.length;
+    let first = A[0] * A[1];
+    let second = A[i-2]*A[i-3];
+    let last = A[i-1];
+    
+    if(last < 0) answer = Math.min(first,second) * last;
+    else answer = Math.max(first,second) * last;
+    return answer;
+}
