@@ -1,0 +1,19 @@
+function solution(H) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    const stack = [];
+    let count = 0;
+    
+    H.forEach((item,index)=> {
+        if(stack.length != 0) {
+            while(stack[stack.length -1] > item) {
+                stack.pop();
+            }
+        }
+        if(stack.length == 0 || stack[stack.length - 1] < item) {
+            stack.push(item);
+            count = count + 1;
+        }    
+    });
+    
+    return count;
+}
