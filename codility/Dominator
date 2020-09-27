@@ -1,0 +1,18 @@
+function solution(A) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    let stack = [];
+    let dominator = -1;
+    let arr = A.slice();
+    
+    arr.sort((a,b)=> a-b);
+    let expect = arr[Math.ceil((A.length -1)/2)]; 
+    A.forEach((item,index)=>{
+        if(item == expect) {
+            stack.push(index)
+        }
+    })
+    if(stack.length > Math.ceil((A.length -1)/2)) {
+        return stack[0];
+    }
+    return dominator;
+}
