@@ -1,0 +1,20 @@
+function solution(A) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    if(A.length <= 1) return 0;
+    
+    let min = A[0];
+    let localMaxProfit = 0;
+    let grobalMaxProfit = 0;
+    for(let i=1;i<A.length;i++){
+        localMaxProfit = A[i] - min;
+        if(A[i] < min) min = A[i];
+        
+        grobalMaxProfit = Math.max(grobalMaxProfit,localMaxProfit);
+    }
+    if(grobalMaxProfit<0) return 0;
+    
+    return grobalMaxProfit;
+}
+
+// 카데인 알고리즘
+//https://sustainable-dev.tistory.com/23
