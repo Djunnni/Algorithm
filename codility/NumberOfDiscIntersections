@@ -1,0 +1,28 @@
+function solution(A) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    let N = A.length;
+    let lower = [];
+    let upper = [];
+    
+    // start 점과 end 점을 넣는다.
+    for(let i=0;i<N;i++) {
+        lower[i] = i - A[i];
+        upper[i] = i + A[i];
+    }
+    
+    lower.sort((a,b)=> a-b);
+    upper.sort((a,b)=> a-b);
+
+    let intersect = 0;
+    let second = 0;
+    
+    for(let i=0;i<N;i++){
+        while(second < N && upper[i] >= lower[second]) {
+            intersect = intersect + second;
+            intersect = intersect - i;
+            second++;
+        }
+    }
+    if(intersect > 10000000) intersect = -1;
+    return intersect;
+}
