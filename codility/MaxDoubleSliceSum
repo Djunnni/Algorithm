@@ -1,0 +1,22 @@
+function solution(A) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    // left, right 누적 합 공간 구하기
+    let leftArr = A.map((i)=>0);
+    let rightArr = A.map((i)=>0);
+    // 완쪽 부터
+    for(let i=1; i<A.length -1; i++) {
+        leftArr[i] = Math.max(0,leftArr[i-1]+A[i])
+    }
+    // 오른쪽 부터
+    for(let j=A.length-2; j>0; j--) {
+        rightArr[j] = Math.max(0,rightArr[j+1]+A[j]);
+    }
+    // 최대를 0
+    let max = 0;
+    // i 가 1부터 A.length -1 까지
+    for(let i=1;i<A.length-1;i++) {
+        max = Math.max(max, rightArr[i+1] + leftArr[i-1]);
+    }
+    
+    return max;
+}
