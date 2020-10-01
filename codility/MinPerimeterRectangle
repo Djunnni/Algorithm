@@ -1,0 +1,16 @@
+function solution(N) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    let start = 1;
+    let items = new Set();
+    let min = 2*(N+1);
+    while(start*start<=N) {
+        if(N%start == 0) {
+            let x = 2*(start + N/start);
+            if(x<min) {
+                min = x;
+            }
+        }
+        start = start + 1;
+    }
+   return min;
+}
