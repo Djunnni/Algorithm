@@ -1,0 +1,40 @@
+// you can write to stdout for debugging purposes, e.g.
+// console.log('this is a debug message');
+
+function solution(A) {
+    // write your code in JavaScript (Node.js 8.9.4)
+    const middle = Math.floor(A.length /2);
+    const freq = {};
+
+    let leaderFreq = 0;
+    let leaderValue = 0;
+
+    A.forEach((v,i) => {
+        if(freq[v]) {
+            freq[v].push(i);
+        } else {
+            freq[v] = [];
+            freq[v].push(i);
+        }
+        if(freq[v].length > middle && freq[v].length > leaderFreq) {
+            leaderFreq = freq[v].length;
+            leaderValue = v;
+        }
+    })
+
+    let count = 0;
+    let leftLeaderCount = 0;
+
+    for(let i = 0; i < A.length; i++) {
+        const leftLength = i + 1;
+        if(A[i] === leaderValue) leftLeaderCount++;
+        const rightLength = A.length - leftLength;
+        const rightLeaderCount = leaderFreq - leftLeaderCount;
+
+        if(leftLeaderCount >  Math.floor(leftLength / 2) && rightLeaderCount > Math.floor(rightLength /2)) {
+            count++;
+        }
+    }
+
+    return count;
+}
