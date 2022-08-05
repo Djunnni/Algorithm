@@ -1,5 +1,3 @@
-package com.ssafy.lab.BJ_2493;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
