@@ -27,11 +27,13 @@ public class Main {
 		PriorityQueue<Integer> queue = new PriorityQueue<>(new Comparator<Integer>() {
 			@Override
 			public int compare(Integer o1, Integer o2) {
-				// TODO Auto-generated method stub
-				if(Integer.valueOf(Math.abs(o1)).equals(Integer.valueOf(Math.abs(o2)))) {
-					return Integer.valueOf(o1).compareTo(Integer.valueOf(o2));
+				// Math.abs 자체가 static int를 리턴하므로 == 으로 비교해도 됨.
+				if(Math.abs(o1) == Math.abs(o2)) {
+					// Integer 클래스에 compare 함수 사용하기.
+					// Integer.valueOf(x).compareTo(Integer.valueOf(y)) 로 변환해서 처리함.
+					return Integer.compare(o1, o2);
 				}
-				return Math.abs(o1) - Math.abs(o2);
+				return Integer.compare(Math.abs(o1), Math.abs(o2));
 			}
 		});
 		
