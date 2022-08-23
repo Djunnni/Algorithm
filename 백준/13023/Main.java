@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -9,6 +8,11 @@ import java.util.StringTokenizer;
 /**
  * BJ_13023_ABCDE
  * 2초 512mb
+ * 
+ * 2가지 Point에 대해 유념하기
+ * DFS일 떄, 전체방문이라면 굳이 정렬할 필요없이 돌기
+ * 상태를 먼저 넣어주고 가는게 좋다.
+ * 
  * @author djunnni
  *
  */
@@ -47,16 +51,22 @@ public class Main {
 //		}
 //		System.out.println("-----------------------");
 		
-		// 친구 관계를 오름차순으로 정렬하기
-		for(List<Integer> friends : list) {
-			Collections.sort(friends);
-		}
+        // Point: 정렬이 왜 필요하다고 생각했을까? 
+        // => DFS를 돌 경우에는 정렬이 좋을 거라 생각했지만, 전체탐색으로 돌거면 안해도 된다.
+		
+		// // 친구 관계를 오름차순으로 정렬하기
+        // for(List<Integer> friends : list) {
+		// 	Collections.sort(friends);
+		// }
 		
 		answer = 0;
 		
         // dfs 시작
 		for(int i = 0; i < N && !isFinish; i++) {
 			boolean isFriends[] = new boolean[N];
+            // Point : 나부터 방문체크 하기
+            // 안했을 때: 394ms, 했을 때: 274ms
+            isFriends[i] = true;
 			dfs(list, isFriends, i, 0);
 		}
 		
@@ -67,7 +77,7 @@ public class Main {
         // 이미 끝났었다면 전부 return
 		if(isFinish) return;
         // 최고점에 도달하면 answer = 1;
-		if(count == 5) {
+		if(count == 4) {
 			answer = 1;
 			isFinish = true;
 			return;
