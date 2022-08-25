@@ -4,6 +4,10 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 /**
+ * SW_8382_방향_전환
+ * 
+ * 그리디 적으로 방법을 모색해 계산한다.
+ * 1, 2, 3, 4일 때, 어떻게 움직이는지를 검사
  * author djunnni
  */
 public class Solution {
