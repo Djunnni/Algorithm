@@ -5,6 +5,7 @@ import java.util.StringTokenizer;
 
 /**
  * acmicpc.BJ_2644_촌수계산
+ * DFS 문제로 범위 실수 조심하기
  * author djunnni
  */
 public class Main {
