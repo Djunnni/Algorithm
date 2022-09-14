@@ -3,7 +3,10 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * acmicpc.BJ_12852_1로만들기2
+ * acmicpc.BJ_12852_1로만들기2_백트래킹
+ * 
+ * 가지치기 전략으로 문제 해결
+ * 
  * author djunnni
  */
 public class Main {
