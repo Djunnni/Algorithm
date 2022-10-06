@@ -6,6 +6,8 @@ import java.util.StringTokenizer;
 /**
  * acmicpc.BJ_9205_맥주마시면서_걸어가기
  * author djunnni
+ * 
+ * 풀이법 : DFS
  */
 public class Main {
     static boolean visited[], success;
