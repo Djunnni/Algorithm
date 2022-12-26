@@ -6,6 +6,7 @@ import java.util.StringTokenizer;
  * dongbinna_큰_수의_법칙
  * p92
  * author djunnni
+ * O(nlogn) => Arrays.sort 때문
  */
 public class 큰_수의_법칙 {
     public static void main(String[] args) {
