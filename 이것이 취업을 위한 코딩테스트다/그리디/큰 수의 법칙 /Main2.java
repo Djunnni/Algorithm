@@ -44,6 +44,11 @@ public class Main2 {
 		
 		int result = (M / (K + 1)) * (K * max + nextMax) + max * (M % (K + 1));
 		System.out.println(result);		
+
+		// M에 대해서도 재사용 고려해보기 [TODO]
+		// int x = ((M / (K + 1)) * K + (M % (K + 1)));
+		// int y = M - x;
+		// System.out.println(x * max + y * nextMax);		
 	}
 
 }
