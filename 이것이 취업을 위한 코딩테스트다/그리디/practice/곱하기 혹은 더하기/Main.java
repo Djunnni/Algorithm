@@ -21,6 +21,11 @@ public class Main {
 		int answer = 0;
 		for(char num : number.toCharArray()) {
 			int current = num - '0';
+
+            // [풀이2] 두 상황중 최대를 구하게 한다. 결국 비교를 하니 같은 성능일 것 같다.
+            // answer = Math.max(answer * current, answer + current); 
+
+            // [풀이1]
 			if(current == 0 || current == 1 || answer == 0 || answer == 1) { 
                 // 현재 값이 0이나 1, answer가 0이나 1이면 +를 한다.
 				answer += current;
