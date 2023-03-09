@@ -1,6 +1,9 @@
 import java.util.HashMap;
 import java.util.Scanner;
 
+/**
+    189364kb	1296sec
+ */
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
