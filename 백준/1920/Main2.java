@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 /**
- * BJ_1290
+ * BJ_1920
  * lowerBound와 upperBound의 차를 통해서 index가 0보다 크면 해당 값이 존재, 0이거나 작으면 존재하지 않음
  * lowerBound, upperBound는 log(N)의 연산으로 해당 알고리즘에선 2log(N) + Nlog(N) => (N + 2)log(N)의 연산이 보임.
  * 
