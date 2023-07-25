@@ -7,7 +7,8 @@ import java.util.*;
 
 /**
  * @author Djunnni
- * DFS를 올바르게 적용하자.. 동준아
+ * DFS를 올바르게 적용하자
+ * 	345824KB	4384ms
  */
 public class Main_16234 {
     public static int dx[] = { -1, 1, 0, 0 }; // 좌, 우, 상, 하
