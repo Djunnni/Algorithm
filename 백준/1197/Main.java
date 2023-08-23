@@ -8,6 +8,7 @@ import java.util.StringTokenizer;
  * 백준 1197
  * union-find와 edge 거리가 가까운순으로 더해서 문제를 해결하는
  * 기본적인 MST 문제
+ * => ElogE
  */
 public class Main {
 	static class Edge implements Comparable<Edge> {
