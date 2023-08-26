@@ -12,6 +12,7 @@ import java.util.*;
  * 즉, 다익스트라를 N번 수행하게 된다. (갈때 N - 1, 올때 1)
  * 
  * 다익스트라 배열 접근 O(N^2)
+ * 22616KB	1088ms
  */
 public class Main {
     public static int[][] matrix;
