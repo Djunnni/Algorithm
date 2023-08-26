@@ -10,6 +10,8 @@ import java.util.*;
  * @author djunnni
  * 1 ~ N까지 X로 출발하고 X에서는 다익스트라 1번에 확인이 가능하다.
  * 즉, 다익스트라를 N번 수행하게 된다. (갈때 N - 1, 올때 1)
+ * 
+ * 다익스트라 배열 접근 O(N^2)
  */
 public class Main {
     public static int[][] matrix;
