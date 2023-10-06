@@ -1,5 +1,9 @@
 import java.util.*;
 
+/**
+ * @author djunnni
+ * 스킬트리는 1번부터 순차적으로 나와야 한다.
+ */
 class Solution {
     public int solution(String skill, String[] skill_trees) {
         int[] skillStudies = getSkillStudies(skill);
