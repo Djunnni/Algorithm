@@ -9,6 +9,10 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
 
+        // 레벨을 난이도 순으로 배치했다.
+        // 쉬운레벨이 어려운 레벨보다 점수를 많이 받는 경우다.
+        // 문제를 해결하고자 특정 레벨의 점수를 감소시키려고 한다.
+        // 각 레벨을 클리어 할 때, 주는 점수가 증가하게 만드려고 한다.
         int stages[] = new int[N];
         for(int i = 0; i < N; i++) {
             int level = Integer.parseInt(br.readLine());
